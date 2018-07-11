@@ -69,6 +69,17 @@ public class SudokuHeuristica {
                 l.add(new Area(a, b, cantidadVaciosEnArea(a, b, h, m)));
             }
         }
+        Collections.sort(l, new Comparator<Area>() {
+        @Override public int compare(final Area o1, final Area o2) {
+        if (o1.vacios> o2.vacios) {
+         return 1;
+        } else if (o1.vacios < o2.vacios ) {
+        return -1;
+       }  
+      return 0;
+        } 
+       });
+
         return l;
     }
 
